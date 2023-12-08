@@ -68,7 +68,13 @@ local function main(f)
 	local fout = assert(io.open(dfile, "a"))
 	fout:write(dd)
 	fout:close()
-	os.execute("sudo dtrace -C -s " .. dfile)
+	local stream = io.popen("sudo dtrace -C -s " .. dfile)
+	stream:setvbuf("line")
+	for line in stream:lines() do
+		local l = line:gsub("^.*:entry ","")
+		io.output():write(l .. "\n")
+	end
+
 	os.remove(dfile)
 end
 
