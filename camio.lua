@@ -68,7 +68,7 @@ local function main(f)
 	local fout = assert(io.open(dfile, "a"))
 	fout:write(dd)
 	fout:close()
-	os.execute("sudo dtrace -s " .. dfile)
+	os.execute("sudo dtrace -C -s " .. dfile)
 	os.remove(dfile)
 end
 
