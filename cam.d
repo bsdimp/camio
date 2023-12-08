@@ -145,7 +145,7 @@ PROBE
 PROBE
 /this->func == XPT_SCSI_IO && this->trace && this->cdb_len == 1/
 {
-	printf("%s%d: CDB: %02x",
+	printf("%s%d: CDB: %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->cdb[0]);
 }
@@ -153,7 +153,7 @@ PROBE
 PROBE
 /this->func == XPT_SCSI_IO && this->trace && this->cdb_len == 6/
 {
-	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x",
+	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->cdb[0], this->cdb[1], this->cdb[2],
 	    this->cdb[3], this->cdb[4], this->cdb[5]);
@@ -162,7 +162,7 @@ PROBE
 PROBE
 /this->func == XPT_SCSI_IO && this->trace && this->cdb_len == 10/
 {
-	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->cdb[0], this->cdb[1], this->cdb[2],
 	    this->cdb[3], this->cdb[4], this->cdb[5],
@@ -173,7 +173,7 @@ PROBE
 PROBE
 /this->func == XPT_SCSI_IO && this->trace && this->cdb_len == 12/
 {
-	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->cdb[0], this->cdb[1], this->cdb[2],
 	    this->cdb[3], this->cdb[4], this->cdb[5],
@@ -184,7 +184,7 @@ PROBE
 PROBE
 /this->func == XPT_SCSI_IO && this->trace && this->cdb_len == 16/
 {
-	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	printf("%s%d: CDB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->cdb[0], this->cdb[1], this->cdb[2],
 	    this->cdb[3], this->cdb[4], this->cdb[5],
@@ -214,7 +214,7 @@ PROBE
 {
 	this->adb = (char *)&this->ataio->cmd;
 
-	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x",
+	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->adb[ 0], this->adb[ 1], this->adb[ 2], this->adb[ 3], this->adb[ 4], this->adb[ 5], this->adb[ 6], this->adb[ 7],
 	    this->adb[ 8], this->adb[ 9], this->adb[10], this->adb[11], this->adb[12], this->adb[13]);
@@ -225,7 +225,7 @@ PROBE
 {
 	this->adb = (char *)&this->ataio->cmd;
 
-	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x",
+	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->adb[ 0], this->adb[ 1], this->adb[ 2], this->adb[ 3], this->adb[ 4], this->adb[ 5], this->adb[ 6], this->adb[ 7],
 	    this->adb[ 8], this->adb[ 9], this->adb[10], this->adb[11], this->adb[12], this->adb[13],
@@ -238,7 +238,7 @@ PROBE
 	this->adb = (char *)&this->ataio->cmd;
 	this->aux = (char *)&this->ataio->aux;
 
-	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x %02x %02x 0x%02x",
+	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x %02x %02x 0x%02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->adb[ 0], this->adb[ 1], this->adb[ 2], this->adb[ 3], this->adb[ 4], this->adb[ 5], this->adb[ 6], this->adb[ 7],
 	    this->adb[ 8], this->adb[ 9], this->adb[10], this->adb[11], this->adb[12], this->adb[13],
@@ -251,7 +251,7 @@ PROBE
 	this->adb = (char *)&this->ataio->cmd;
 	this->aux = (char *)&this->ataio->aux;
 
-	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x %02x %02x 0x%02x 0x%02x",
+	printf("%s%d: ADB: %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x %02x 0x%02x %02x %02x 0x%02x 0x%02x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->adb[ 0], this->adb[ 1], this->adb[ 2], this->adb[ 3], this->adb[ 4], this->adb[ 5], this->adb[ 6], this->adb[ 7],
 	    this->adb[ 8], this->adb[ 9], this->adb[10], this->adb[11], this->adb[12], this->adb[13],
@@ -279,7 +279,7 @@ PROBE
 	/* Note: We omit the half of the command the driver / sim fills in to do the I/O */
 	/* Not 100% this is cool, but it's what we're doing :) */
 	/* dtrace makes it hard to toss in a letoh32() here, so we don't */
-	printf("%s%d: N%sDB: %08x %08x %08x %08x %08x %08x %08x %08x",
+	printf("%s%d: N%sDB: %08x %08x %08x %08x %08x %08x %08x %08x\n",
 	    stringof(this->periph->periph_name), this->periph->unit_number,
 	    this->func == XPT_NVME_IO ? "I" : "A",
 	    this->ndb[ 0], this->ndb[ 1], this->ndb[10], this->ndb[11], this->ndb[12], this->ndb[13], this->ndb[14], this->ndb[15]);
