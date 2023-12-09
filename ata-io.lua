@@ -1044,6 +1044,7 @@ local ata_io = {
 	{ name="DEVICE", len=8, byte=11, bit=0, level=2 },
 	{ name="CONTROL", len=8, byte=12, bit=0, level=2 },
     },
+-- XXX from here to the end is lame and needs to be regenerated.
     {
 	name="SMART READ ATTR VALUES",
 	{ name="COMMAND", len=8, byte=0, bit=0, id=true, value=0xd0, },
@@ -1943,6 +1944,15 @@ local ata_io = {
 	{ name="DEVICE", len=8, byte=11, bit=0, level=2 },
 	{ name="CONTROL", len=8, byte=12, bit=0, level=2 },
     },
+    {
+	name = "Unknown ATA Command",
+	{ name="COMMAND", len=8, byte=0, bit=0, },
+	{ name="FEATURES", len=16, byte=1, bit=0, },
+	{ name="LBA", len=48, byte=3, bit=0 },
+	{ name="SECTOR COUNT", len=16, byte=9, bit=0 },
+	{ name="DEVICE", len=8, byte=11, bit=0, },
+	{ name="CONTROL", len=8, byte=12, bit=0, },
+    }
 }
 
 return ata_io
