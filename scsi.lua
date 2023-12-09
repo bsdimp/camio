@@ -109,7 +109,7 @@ local function find_command(line, prefix)
 		walker = walker + 3
 		n = n + 1
 	end
-	return res
+	return cmd
 end
 
 scsi.ascii_filter = function(file, line, cmd_prefix, res_prefix, echo)
