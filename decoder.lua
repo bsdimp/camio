@@ -7,11 +7,44 @@
 local decoder = {}
 
 local function extract(v, array)
-	if v.len >= 32 then
-		-- handle larger len than 32
-		return array[v.word]
+	local wlen, off, le
+
+	if v.word ~= nil then
+		wlen = 32
+		off = v.word
+		le = true	-- hack: only nvme is little endian
+	else
+		wlen = 8
+		off = v.byte
+		le = false
 	end
-	return (array[v.word] >> v.bit) & ((1 << v.len) - 1)
+
+	local rv = 0
+	local len = v.len
+	local bit = v.bit
+	local shift = 0
+
+	while len > 0 do
+		local val = array[off] >> bit, v2
+		local tot = wlen - bit
+
+		if tot <= len then
+			v2 = val & ((1 << tot) - 1)
+			len = len - tot
+		else
+			v2 = val & ((1 << len) - 1)
+			len = 0
+		end
+		if le then
+			rv = (v2 << shift) | rv
+			shift = shift + wlen
+		else
+			rv = (rv << wlen) | v2
+		end
+		bit = 0
+		off = off + 1
+	end
+	return rv
 end
 
 local function print_me(ent, array)
