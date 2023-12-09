@@ -1,0 +1,492 @@
+# As per SAT-5, revision 10, dated January 31, 2022, Clause 12.2
+[
+    {
+	name: "ATA PASS-THROUGH (12)",
+	fields: [
+            {
+                "name": "OPERATION CODE",
+                "length": 8,
+                "byte": 0,
+                "bit": 0,
+                "id": true,
+                "value": 0xa1
+            },
+            {
+                "name": "Reserved",
+                "length": 1,
+                "byte": 1,
+                "bit": 0,
+                "reserved": true
+            },
+            {
+                "name": "PROTOCOL",
+                "length": 4,
+                "byte": 1,
+                "bit": 1
+            },
+            {
+                "name": "Obsolete",
+                "length": 3,
+                "byte": 1,
+                "bit": 5,
+                "obsolete": true
+            },
+            {
+                "name": "T_LENGTH",
+                "length": 2,
+                "byte": 2,
+                "bit": 0,
+            },
+            {
+                "name": "BYTE_BLOCK",
+                "length": 1,
+                "byte": 2,
+                "bit": 2,
+            },
+            {
+                "name": "T_DIR",
+                "length": 1,
+                "byte": 2,
+                "bit": 3,
+            },
+            {
+                "name": "T_TYPE",
+                "length": 1,
+                "byte": 2,
+                "bit": 4,
+            },
+            {
+                "name": "CK_COND",
+                "length": 1,
+                "byte": 2,
+                "bit": 5,
+            },
+            {
+                "name": "OFF_LINE",
+                "length": 1,
+                "byte": 2,
+                "bit": 7,
+            },
+            {
+                "name": "FEATURES (7:0)",
+                "length": 8,
+                "byte": 3,
+                "bit": 0
+            },
+            {
+                "name": "COUNT (7:0)",
+                "length": 8,
+                "byte": 4,
+                "bit": 0
+            },
+            {
+                "name": "LBA (7:0)",
+                "length": 8,
+                "byte": 5,
+                "bit": 0
+            },
+            {
+                "name": "LBA (15:8)",
+                "length": 8,
+                "byte": 6,
+                "bit": 0
+            },
+            {
+                "name": "LBA (23:16)",
+                "length": 8,
+                "byte": 7,
+                "bit": 0
+            },
+            {
+                "name": "DEVICE",
+                "length": 8,
+                "byte": 8,
+                "bit": 0
+            },
+            {
+                "name": "COMMAND",
+                "length": 8,
+                "byte": 9,
+                "bit": 0
+            },
+            {
+                "name": "Reserved",
+                "length": 8,
+                "byte": 10,
+                "bit": 0
+                "reserved": true
+            },
+            {
+                "name": "CONTROL",
+                "length": 8,
+                "byte": 11,
+                "bit": 0
+            },
+        ],
+        "identifiers": [ "OPERATION CODE" ]
+    }, 
+    {
+	name: "ATA PASS-THROUGH (16)",
+	fields: [
+            {
+                "name": "OPERATION CODE",
+                "length": 8,
+                "byte": 0,
+                "bit": 0,
+                "id": true,
+                "value": 0x85
+            },
+            {
+                "name": "EXTEND",
+                "length": 1,
+                "byte": 1,
+                "bit": 0
+            },
+            {
+                "name": "PROTOCOL",
+                "length": 4,
+                "byte": 1,
+                "bit": 1
+            },
+            {
+                "name": "Obsolete",
+                "length": 3,
+                "byte": 1,
+                "bit": 5,
+                "obsolete": true
+            },
+            {
+                "name": "T_LENGTH",
+                "length": 2,
+                "byte": 2,
+                "bit": 0,
+            },
+            {
+                "name": "BYTE_BLOCK",
+                "length": 1,
+                "byte": 2,
+                "bit": 2,
+            },
+            {
+                "name": "T_DIR",
+                "length": 1,
+                "byte": 2,
+                "bit": 3,
+            },
+            {
+                "name": "T_TYPE",
+                "length": 1,
+                "byte": 2,
+                "bit": 4,
+            },
+            {
+                "name": "CK_COND",
+                "length": 1,
+                "byte": 2,
+                "bit": 5,
+            },
+            {
+                "name": "OFF_LINE",
+                "length": 1,
+                "byte": 2,
+                "bit": 7,
+            },
+            {
+                "name": "FEATURES (15:8)",
+                "length": 8,
+                "byte": 3,
+                "bit": 0
+            },
+            {
+                "name": "FEATURES (7:0)",
+                "length": 8,
+                "byte": 4,
+                "bit": 0
+            },
+            {
+                "name": "COUNT (15:8)",
+                "length": 8,
+                "byte": 5,
+                "bit": 0
+            },
+            {
+                "name": "COUNT (7:0)",
+                "length": 8,
+                "byte": 6,
+                "bit": 0
+            },
+            {
+                "name": "LBA (31:24)",
+                "length": 8,
+                "byte": 7,
+                "bit": 0
+            },
+            {
+                "name": "LBA (7:0)",
+                "length": 8,
+                "byte": 8,
+                "bit": 0
+            },
+            {
+                "name": "LBA (39:32)",
+                "length": 8,
+                "byte": 9,
+                "bit": 0
+            },
+            {
+                "name": "LBA (15:8)",
+                "length": 8,
+                "byte": 10,
+                "bit": 0
+            },
+            {
+                "name": "LBA (47:40)",
+                "length": 8,
+                "byte": 11,
+                "bit": 0
+            },
+            {
+                "name": "LBA (23:16)",
+                "length": 8,
+                "byte": 12,
+                "bit": 0
+            },
+            {
+                "name": "DEVICE",
+                "length": 8,
+                "byte": 13,
+                "bit": 0
+            },
+            {
+                "name": "COMMAND",
+                "length": 8,
+                "byte": 14,
+                "bit": 0
+            },
+            {
+                "name": "CONTROL",
+                "length": 8,
+                "byte": 15,
+                "bit": 0
+            },
+        ],
+        "identifiers": [ "OPERATION CODE" ]
+    }, 
+    {
+	name: "ATA PASS-THROUGH (32)",
+	fields: [
+            {
+                "name": "OPERATION CODE",
+                "length": 8,
+                "byte": 0,
+                "bit": 0,
+                "id": true,
+                "value": 0x7f
+            },
+            {
+                "name": "CONTROL",
+                "length": 8,
+                "byte": 1,
+                "bit": 0
+            },
+            {
+                "name": "Reserved",
+                "length": 40,
+                "byte": 2,
+                "bit": 0,
+                "reserved": true
+            },
+            {
+                "name": "ADDITIONAL CDB LENGTH",
+                "length": 8,
+                "byte": 7,
+                "bit": 0,
+                "fixed": true,
+                "value": 0x18
+            },
+            {
+                "name": "SERVICE ACTION",
+                "length": 16,
+                "byte": 8,
+                "bit": 0,
+                "id": true,
+                "value": 0x1ff0
+            },
+            {
+                "name": "EXTEND",
+                "length": 1,
+                "byte": 10,
+                "bit": 0
+            },
+            {
+                "name": "PROTOCOL",
+                "length": 4,
+                "byte": 10,
+                "bit": 1
+            },
+            {
+                "name": "Obsolete",
+                "length": 3,
+                "byte": 10,
+                "bit": 5,
+                "obsolete": true
+            },
+            {
+                "name": "T_LENGTH",
+                "length": 2,
+                "byte": 11,
+                "bit": 0,
+            },
+            {
+                "name": "BYTE_BLOCK",
+                "length": 1,
+                "byte": 11,
+                "bit": 2,
+            },
+            {
+                "name": "T_DIR",
+                "length": 1,
+                "byte": 11,
+                "bit": 3,
+            },
+            {
+                "name": "T_TYPE",
+                "length": 1,
+                "byte": 11,
+                "bit": 4,
+            },
+            {
+                "name": "CK_COND",
+                "length": 1,
+                "byte": 11,
+                "bit": 5,
+            },
+            {
+                "name": "OFF_LINE",
+                "length": 1,
+                "byte": 11,
+                "bit": 7,
+            },
+            {
+                "name": "Reserved",
+                "length": 16,
+                "byte": 12,
+                "bit": 0,
+                "reserved": true
+            },
+            {
+                "name": "LBA (47:40)",
+                "length": 8,
+                "byte": 14,
+                "bit": 0
+            },
+            {
+                "name": "LBA (39:32)",
+                "length": 8,
+                "byte": 15,
+                "bit": 0
+            },
+            {
+                "name": "LBA (31:24)",
+                "length": 8,
+                "byte": 16,
+                "bit": 0
+            },
+            {
+                "name": "LBA (23:16)",
+                "length": 8,
+                "byte": 17,
+                "bit": 0
+            },
+            {
+                "name": "LBA (15:8)",
+                "length": 8,
+                "byte": 18,
+                "bit": 0
+            },
+            {
+                "name": "LBA (7:0)",
+                "length": 8,
+                "byte": 19,
+                "bit": 0
+            },
+            {
+                "name": "FEATURES (15:8)",
+                "length": 8,
+                "byte": 20,
+                "bit": 0
+            },
+            {
+                "name": "FEATURES (7:0)",
+                "length": 8,
+                "byte": 21,
+                "bit": 0
+            },
+            {
+                "name": "COUNT (15:8)",
+                "length": 8,
+                "byte": 22,
+                "bit": 0
+            },
+            {
+                "name": "COUNT (7:0)",
+                "length": 8,
+                "byte": 23,
+                "bit": 0
+            },
+            {
+                "name": "DEVICE",
+                "length": 8,
+                "byte": 24,
+                "bit": 0
+            },
+            {
+                "name": "COMMAND",
+                "length": 8,
+                "byte": 25,
+                "bit": 0
+            },
+            {
+                "name": "Reserved",
+                "length": 8,
+                "byte": 26,
+                "bit": 0,
+                "reserved": true
+            },
+            {
+                "name": "ICC (7:0)",
+                "length": 8,
+                "byte": 27,
+                "bit": 0
+            },
+            {
+                "name": "AUXILIARY (31:24)",
+                "length": 8,
+                "byte": 28,
+                "bit": 0
+            },
+            {
+                "name": "AUXILIARY (23:16)",
+                "length": 8,
+                "byte": 29,
+                "bit": 0
+            },
+            {
+                "name": "AUXILIARY (15:8)",
+                "length": 8,
+                "byte": 30,
+                "bit": 0
+            },
+            {
+                "name": "AUXILIARY (7:0)",
+                "length": 8,
+                "byte": 31,
+                "bit": 0
+            },
+        ],
+        "identifiers": [
+	    "OPERATION CODE",
+	    "SERVICE ACTION"
+	]
+    }, 
+]
