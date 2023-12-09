@@ -48,6 +48,7 @@ local function extract(v, array)
 end
 
 local function print_me(ent, array)
+	local verbosity = 0
 	io.write(string.format("\t%s:", ent.name))
 	for k, v in pairs(ent) do
 		if v.name then
@@ -63,7 +64,12 @@ local function print_me(ent, array)
 			-- control these. As well as supporting multiple levels
 			-- of 'interesting' fields.
 			--
+			-- Also, there's many times we might want to look at
+			-- fields that are noise, so allow verbosity level to
+			-- vary (though we hard code it to 0 above).
+			--
 			if v.id or v.protection or v.obsolete or v.reserved then goto next end
+			if v.level and v.level > verbosity then goto next end
 			val = extract(v, array)
 			if v.nonzero and val == 0 then goto next end
 			io.write(string.format(" %s: %d", v.name, val))
