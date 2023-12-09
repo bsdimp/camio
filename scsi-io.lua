@@ -1470,6 +1470,4 @@ local scsi_io = {
     },
 }
 
-
-
-return nvme_io
+return scsi_io
