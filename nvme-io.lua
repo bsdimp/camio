@@ -137,7 +137,7 @@ local nvme_io = {
 	{ name="CWD15",	len=32, word=15, bit=0, },
     },
     {
-	name = "Unknown Command",
+	name = "Unknown NVME Command",
 	{ name="OPC",	len=8, word=0, bit=0, },
 	{ name="NSID",	len=32,	word=1, bit=0, },
 	{ name="CWD10",	len=32, word=10, bit=0, },
