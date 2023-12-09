@@ -717,6 +717,13 @@ local scsi_io = {
 	{ name="CONTROL", len=8, byte=5, bit=0, },
     },
     {
+	name="READ (6)",
+	{ name="OPERATION CODE", len=8, byte=0, bit=0, id=true, value=0x08, },
+	{ name="LOGICAL BLOCK ADDRESS", len=24, byte=1, bit=0, },
+	{ name="TRANSFER LENGTH", len=8, byte=4, bit=0, },
+	{ name="CONTROL", len=8, byte=5, bit=0, },
+    },
+    {
 	name="READ (10)",
 	{ name="OPERATION CODE", len=8, byte=0, bit=0, id=true, value=0x28, },
 	{ name="Obsolete", len=1, byte=1, bit=0, obsolete=true, },
@@ -1023,6 +1030,13 @@ local scsi_io = {
 	{ name="EXPECTED LOGICAL BLOCK APPLICATION TAG", len=16, byte=24, bit=0, },
 	{ name="LOGICAL BLOCK APPLICATION TAG MASK", len=16, byte=26, bit=0, },
 	{ name="VERIFICATION LENGTH", len=32, byte=28, bit=0, },
+    },
+    {
+	name="WRITE (6)",
+	{ name="OPERATION CODE", len=8, byte=0, bit=0, id=true, value=0x0a, },
+	{ name="LOGICAL BLOCK ADDRESS", len=24, byte=1, bit=0, },
+	{ name="TRANSFER LENGTH", len=8, byte=4, bit=0, },
+	{ name="CONTROL", len=8, byte=5, bit=0, },
     },
     {
 	name="WRITE (10)",
