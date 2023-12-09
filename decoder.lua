@@ -51,7 +51,18 @@ local function print_me(ent, array)
 	io.write(string.format("\t%s:", ent.name))
 	for k, v in pairs(ent) do
 		if v.name then
-			-- Skip a bunch -- maybe in the future we can be more selective
+			--
+			-- Skip uninteresting fields. The fields we use to ID
+			-- the block aren't interesting. Nor are the ones that
+			-- are obsolete or reserved for future use. The
+			-- protection ones are extra fields to support
+			-- end-to-end protection of data on otherwise normal
+			-- commands so aren't usually worth displaying.
+			--
+			-- In the future, there should likely be a way to
+			-- control these. As well as supporting multiple levels
+			-- of 'interesting' fields.
+			--
 			if v.id or v.protection or v.obsolete or v.reserved then goto next end
 			val = extract(v, array)
 			if v.nonzero and val == 0 then goto next end
