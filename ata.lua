@@ -5,7 +5,7 @@
 --
 
 local decoder = require("decoder")
-local ata_io = require("scsi-io")
+local ata_io = require("ata-io")
 
 local ata = {}
 
@@ -140,4 +140,3 @@ ata.ascii_filter = function(file, line, cmd_prefix, res_prefix, echo)
 end
 
 return ata
-
