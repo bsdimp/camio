@@ -12,12 +12,6 @@
 local ascii_filter = {}
 local io = require("io")
 
-ascii_filter["scsi"] = function(file, line, cmd_prefix, res_prefix, echo)
-	if echo then
-		file:write(line .. "\n")
-	end
-end
-
 ascii_filter["ata"] = function(file, line, cmd_prefix, res_prefix, echo)
 	if echo then
 		file:write(line .. "\n")

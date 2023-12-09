@@ -9,10 +9,11 @@ local filter = {}
 local df = require("dtrace-filter")
 local af = require("ascii-filter")
 local nvme = require("nvme")
+local scsi = require("scsi")
 
 filter["scsi"] = {
-	dtrace = df["scsi"],
-	ascii = af["scsi"]
+	dtrace = scsi.dtrace_program,
+	ascii = scsi.ascii_filter
 }
 
 filter["ata"] = {
