@@ -51,7 +51,8 @@ local function print_me(ent, array)
 	io.write(string.format("\t%s:", ent.name))
 	for k, v in pairs(ent) do
 		if v.name then
-			if v.id or v.protection then goto next end
+			-- Skip a bunch -- maybe in the future we can be more selective
+			if v.id or v.protection or v.obsolete or v.reserved then goto next end
 			val = extract(v, array)
 			if v.nonzero and val == 0 then goto next end
 			io.write(string.format(" %s: %d", v.name, val))
