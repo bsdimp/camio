@@ -96,7 +96,7 @@ local function find_command(line, prefix)
 	end
 
 	walker = e + 1
-	ep = line:len()
+	ep = line:len() + 1	-- Because strings are 1 based
 	n = 0
 	-- For the moment just assume we have 2-digit hex numbers
 	-- and don't validate
