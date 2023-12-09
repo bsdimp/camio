@@ -89,6 +89,7 @@ local function find_command(line, prefix)
 	local s, e = line:find(prefix)
 	local walker, n, ep
 	local cmd = {}
+	local res = {}
 
 	if (s == nil) then
 		return nil
@@ -100,11 +101,31 @@ local function find_command(line, prefix)
 	-- For the moment just assume we have 2-digit hex numbers
 	-- and don't validate
 	while walker + 2 <= ep do
-		cmd[n] = tonumber(line:sub(walker, walker + 2), 16)
+		res[n] = tonumber(line:sub(walker, walker + 2), 16)
 		walker = walker + 3
 		n = n + 1
 	end
-	return res
+	-- now we need to map cmd_ata to our fake-o adb that ata-io.lua expects
+	cmd[0] = res[1]
+	cmd[1] = res[10]
+	cmd[2] = res[2]
+	cmd[3] = res[9]
+	cmd[4] = res[8]
+	cmd[5] = res[7]
+	cmd[6] = res[5]
+	cmd[7] = res[4]
+	cmd[8] = res[3]
+	cmd[9] = res[12]
+	cmd[10] = res[11]
+	cmd[11] = res[6]
+	cmd[12] = res[13]
+	cmd[13] = res[14]
+	cmd[14] = res[15]
+	cmd[15] = res[16]
+	cmd[16] = res[17]
+	cmd[17] = res[18]
+
+	return cmd
 end
 
 ata.ascii_filter = function(file, line, cmd_prefix, res_prefix, echo)
