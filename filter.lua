@@ -6,8 +6,7 @@
 
 local filter = {}
 
-local df = require("dtrace-filter")
-local af = require("ascii-filter")
+local ata = require("ata")
 local nvme = require("nvme")
 local scsi = require("scsi")
 
@@ -17,8 +16,8 @@ filter["scsi"] = {
 }
 
 filter["ata"] = {
-	dtrace = df["ata"],
-	ascii = af["ata"]
+	dtrace = ata.dtrace_program,
+	ascii = ata.ascii_filter
 }
 
 filter["nvme"] = {
